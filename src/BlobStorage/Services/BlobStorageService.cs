@@ -1,11 +1,9 @@
 ﻿using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
-using Azure.BlobStorage.Options;
 using Microsoft.Extensions.Options;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using static System.Console;
-using System;
 
 namespace Azure.BlobStorage
 {
