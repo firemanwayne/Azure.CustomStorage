@@ -1,0 +1,39 @@
+﻿@typeparam TValue
+
+@code {
+
+    [Inject] public ITableStorageService TableService { get; set; }
+
+    IList<TableItem> Items { get; set; } = new List<TableItem>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            await foreach (var item in TableService.GetTables())
+                Items.Add(item);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+    }
+}
+
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Items)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

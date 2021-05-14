@@ -9,6 +9,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\src\BlobStorage\Azure.BlobStorage.csproj" />
+    <ProjectReference Include="..\..\..\src\QueueStorage\Azure.QueueStorage\Azure.QueueStorage.csproj" />
+    <ProjectReference Include="..\..\..\src\TableStorage\Azure.TableStorage\Azure.TableStorage.csproj" />
     <ProjectReference Include="..\Client\TestAzure.Client.csproj" />
     <ProjectReference Include="..\Shared\TestAzure.Shared.csproj" />
   </ItemGroup>

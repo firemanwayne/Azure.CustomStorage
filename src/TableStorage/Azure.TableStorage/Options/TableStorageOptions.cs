@@ -1,4 +1,6 @@
-﻿namespace Azure.TableStorage
+﻿using System;
+
+namespace Azure.TableStorage
 {
     public class TableStorageOptions
     {
@@ -8,6 +10,7 @@
         const string DevelopmentBlobEndpoint = "BlobEndpoint=http://127.0.0.1:10000/devstoreaccount1;";
         const string DevelopmentQueueEndpoint = "QueueEndpoint=http://127.0.0.1:10001/devstoreaccount1;";
         const string DevelopmentTableEndpoint = "TableEndpoint=http://127.0.0.1:10002/devstoreaccount1;";
+        static Uri TableEndpoint = new("http://127.0.0.1:10002/devstoreaccount1");
 
         public bool IsDevelopment
         {
@@ -25,6 +28,7 @@
         }
         public string AccountKey { get; set; }
         public string AccountName { get; set; }
+        public Uri TableUri { get => TableEndpoint; }
         public string ConnectionString 
         { 
             get => isDevelopment ?
